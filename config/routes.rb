@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
   resources :technologies
-  root 'technologies#index'
+  root 'home#index'
   get  'home/index'
 end
