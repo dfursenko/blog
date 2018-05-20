@@ -1,3 +1,44 @@
-// Place all the styles related to the Home controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+body {
+  background: url("background74.jpg");
+
+  ul {
+    margin: 20px 0 0 30px;
+    padding: 0;
+    width: 300px;
+    list-style: none;
+    counter-reset: li;
+    font: 14px "Trebuchet MS", "Lucida Sans";
+
+    li {
+      position: relative;
+      display: block;
+      padding: .4em .4em .4em 2em;
+      margin: .5em 0;
+      background: #dde9ff;
+      color: #444;
+      text-decoration: none;
+      border-radius: .3em;
+      transition: .3s ease-out;
+    }
+    li:hover {background: #f9f554;}
+    li:hover:before {transform: rotate(360deg);}
+    li:before {
+      content: counter(li);
+      counter-increment: li;
+      position: absolute;
+      left: -1.3em;
+      top: 50%;
+      margin-top: -1.3em;
+      background: #a4f1de;
+      height: 2em;
+      width: 2em;
+      line-height: 2em;
+      border: .3em solid white;
+      text-align: center;
+      font-weight: bold;
+      border-radius: 2em;
+      transition: all .3s ease-out;
+    }
+  }
+
+}
