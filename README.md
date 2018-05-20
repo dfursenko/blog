@@ -1,24 +1,28 @@
-# README
+# Проект "Блог" / Курс Ruby On Rails
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## https://salty-reef-27887.herokuapp.com/
 
-Things you may want to cover:
+При создании этой страницы использовались следующие технологии:
 
-* Ruby version
+* RVM 1.29.3
 
-* System dependencies
+* Ruby 2.4.1
 
-* Configuration
+* Rails 5.1.6
 
-* Database creation
+* PostgreSQL 9.5.12
 
-* Database initialization
+* Slim-rails 3.1.3
 
-* How to run the test suite
+* Sass-rails 5.0.7
 
-* Services (job queues, cache servers, search engines, etc.)
+* Git 2.7.4
 
-* Deployment instructions
+* HerokuCLI 7.0.47
 
-* ...
+
+
+
+
+
+
