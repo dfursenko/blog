@@ -1,10 +1,51 @@
 doctype html
 html
   head
-    title Blog
+    title Блог
     = csrf_meta_tags
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
 
   body
+    /<!-- Start Header -->
+    .container.zerogrid
+      .col-full
+        .wrap-col
+          #header-nav-container
+            a#logo-text href="/" Блог
+            /Navigation Menu
+            ul.sf-menu
+              li.menu-item.current-menu-item
+                a href="/" Главная
+              li.menu-item
+                a href="blog.html" Blog
+              li.menu-item
+                a href="#" Features
+                ul.sub-menu
+                  li.menu-item
+                    a href="#" Menu 01
+                  li.menu-item
+                    a href="#" Menu 02
+                  li.menu-item
+                    a href="#" Menu 03
+              li.menu-item
+                a href="about.html" Обо мне
+            /End Navigation Menu
+            .clear
+      .clear
+    .spacing-30
+    /End Header
+
     = yield
+
+    /Start Footer
+    .spacing-30
+    .container.zerogrid
+      #footer-container.col-full
+        .wrap-col
+          p
+            | Блог &copy; 2018
+            a<> href="https://geekbrains.ru/users/688945" Дмитрий Фурсенко
+          img#footer-logo src="#{image_url('footer-logo.png')}"/
+          .clear
+    /End Footer
