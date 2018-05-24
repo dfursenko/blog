@@ -1,0 +1,25 @@
+= form_for @article do |f|
+  - if @article.errors.any?
+    #error_explanation
+      h2 = "#{pluralize(@article.errors.count, "error")} prohibited this article from being saved:"
+      ul
+        - @article.errors.full_messages.each do |message|
+          li = message
+
+  .field
+    = f.label :title
+    = f.text_field :title
+  .field
+    = f.label :text
+    = f.text_area :text
+  .field
+    = f.label :image
+    = f.file_field :image
+  .field
+    = f.label :category
+    / = f.text_field :category
+    = f.collection_select(:category_id, Category.all, :id, :name)
+  / .field
+  /   = f.label :tags
+  /   = collection_select(:tag_ids, Tag.all, :id, :name, {}, {:multiple => true})
+  .actions = f.submit

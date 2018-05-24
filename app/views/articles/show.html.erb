@@ -1,0 +1,132 @@
+<!-- Start Main Container -->
+<div class="container zerogrid">
+
+  <!-- Start Posts Container -->
+  <div class="col-2-3" id="post-container">
+    <div class="wrap-col">
+
+      <!-- Start Post Item -->
+      <div class="post">
+        <div class="post-margin">
+
+          <!--<div class="post-avatar">-->
+          <!--<div class="avatar-frame"></div>-->
+          <!--<img alt='' src='< %= article.image %>' class='avatar avatar-70 photo' height='70' width='70'/>-->
+          <!--</div>-->
+
+          <h4 class="post-title"><a href="#"><%= @article.title %></a></h4>
+          <ul class="post-status">
+            <li><i class="fa fa-clock-o"></i><%= l @article.created_at, format: "%e %B %Y" %></li>
+            <!--<li><i class="fa fa-comment-o"></i>No Comments</li>-->
+          </ul>
+          <div class="clear"></div>
+        </div>
+
+        <!--<div class="featured-image">-->
+        <!--<img src="< %= image_url("Port_Harbor1-610x350.jpg") %>" class="attachment-post-standard "/>-->
+        <!--<div class="post-icon">-->
+        <!--<span class="fa-stack fa-lg">-->
+        <!--<i class="fa fa-circle fa-stack-2x"></i>-->
+        <!--<i class="fa fa-pencil fa-stack-1x fa-inverse"></i>-->
+        <!--</span>-->
+        <!--</div>-->
+        <!--</div>-->
+
+        <div class="post-margin">
+          <p><%= @article.text %></p>
+        </div>
+
+        <div class="clear"></div>
+      </div>
+      <!-- End Post Item -->
+
+      <!-- Comments -->
+      <div class="comment-container">
+
+        <h6 id="comment-header">Комментарии</h6>
+
+        <ul class="comment-list">
+          <% @article.comments.each do |comment| %>
+            <li>
+              <div class="comment-author">
+                <%= comment.commenter %>
+              </div>
+              <div class="comment-message">
+                <%= comment.message %>
+              </div>
+              <!--< %= link_to 'Destroy Comment', [comment.article, comment], method: :delete, data: { confirm: 'Are you sure?' } %>-->
+            </li>
+          <% end %>
+        </ul>
+
+        <!-- Comment Form -->
+        <div class="commen-form">
+          <h6>Ваш комментарий:</h6>
+          <div id="respond" class="comment-respond">
+            <%= form_with(model: [ @article, @article.comments.build ], local: true) do |form| %>
+              <%= form.text_field :commenter, placeholder: "Ваше имя", class: "comment-name" %>
+              <%= form.text_area :message, placeholder: "Ваше сообщение", class: "comment-text-area" %>
+              <%= form.submit id: "comment-submit", value: "Отправить" %>
+            <% end %>
+          </div><!-- #respond -->
+          <div class="clear"></div>
+        </div>
+        <!-- End Comment Form -->
+
+      </div>
+      <!-- End Comments -->
+
+      <div class="clear"></div>
+    </div>
+  </div>
+  <!-- End Posts Container -->
+
+  <!-- Start Sidebar -->
+  <div class="col-1-3">
+    <div class="wrap-col">
+      <!--<div class="widget-container">-->
+      <!--<h6 class="widget-title">Рубрики</h6>-->
+      <!--<ul>-->
+      <!--< % @categories.each do |category| %>-->
+      <!--<li class="cat-item"><a href="#" title="View all posts filed under">< %= category.name %></a></li>-->
+      <!--< % end %>-->
+      <!--</ul>-->
+      <!--<div class="clear"></div>-->
+      <!--</div>-->
+      <div class="widget-container"><h6 class="widget-title">Последние записи</h6>  <!-- Start Widget -->
+        <ul class="widget-recent-posts">
+
+          <% @articles.take(4).each do |article| %>
+            <li>
+              <!--<div class="post-image">-->
+              <!--<div class="post-mask"></div>-->
+              <!--<img width="70" height="70" src="img/HighRes-70x70.jpg" class="attachment-post-widget #"/>-->
+              <!--</div>-->
+
+              <h6><a href="<%= article_path(article.id) %>"><%= article.title %></a></h6>
+              <span><%= l article.created_at, format: "%e %B %Y" %></span>
+              <div class="clear"></div>
+            </li>
+          <% end %>
+
+        </ul>
+        <!-- End Widget -->
+        <div class="clear"></div>
+      </div>
+      <!--<div class="widget-container">-->
+      <!--<h6 class="widget-title">Tag Cloud</h6>-->
+      <!--<div class="tagcloud">-->
+      <!--< % @tags.each do |tag| %>-->
+      <!--<a href='#' class='tag-link-12' title='1 topic' style='font-size: 8pt;'>< %= tag.name %></a>-->
+      <!--< % end %>-->
+      <!--</div>-->
+      <!--<div class="clear"></div>-->
+      <!--</div>-->
+      <div class="clear"></div>
+    </div>
+  </div>        <!-- End Sidebar -->
+
+  <div class="clear"></div>
+</div>
+<!-- End Main Container -->
+
