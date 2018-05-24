@@ -1,7 +1,7 @@
 doctype html
 html
   head
-    title Блог
+    title Программист Ruby
     = csrf_meta_tags
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
@@ -12,24 +12,13 @@ html
       .col-full
         .wrap-col
           #header-nav-container
-            a#logo-text href="/" Блог
+            a#logo-text href="/" Программист Ruby
             /Navigation Menu
             ul.sf-menu
               li.menu-item.current-menu-item
                 a href="/" Главная
               li.menu-item
-                a href="blog.html" Blog
-              li.menu-item
-                a href="#" Features
-                ul.sub-menu
-                  li.menu-item
-                    a href="#" Menu 01
-                  li.menu-item
-                    a href="#" Menu 02
-                  li.menu-item
-                    a href="#" Menu 03
-              li.menu-item
-                a href="about.html" Обо мне
+                a href="#{home_about_path}" Обо мне
             /End Navigation Menu
             .clear
       .clear
@@ -44,8 +33,9 @@ html
       #footer-container.col-full
         .wrap-col
           p
-            | Блог &copy; 2018
+            | Программист Ruby &copy; 2018
             a<> href="https://geekbrains.ru/users/688945" Дмитрий Фурсенко
-          img#footer-logo src="#{image_url('footer-logo.png')}"/
+          #footer-logo-text Программист Ruby
           .clear
     /End Footer
+    / = debug(params) if Rails.env.development?
