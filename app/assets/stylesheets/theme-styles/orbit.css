@@ -11,7 +11,7 @@
 .post-gallery { 
 	width: 610px;
 	height: 350px;
-	background: #000 url('../images/loading.gif') no-repeat center center;
+	background: #000 url('loading.gif') no-repeat center center;
 	overflow: hidden; }
 .post-gallery>img,  
 .post-gallery>div,
@@ -81,7 +81,7 @@ span.rotator {
     position: absolute;
     top: 0;
     left: -20px;
-    background: url(../images/rotator-black.png) no-repeat;
+    background: url(rotator-black.png) no-repeat;
     z-index: 3; }
 
 span.mask {
@@ -100,7 +100,7 @@ span.rotator.move {
 span.mask.move {
     width: 40px;
     left: 0;
-    background: url(../images/timer-black.png) repeat 0 0; }
+    background: url(timer-black.png) repeat 0 0; }
 
 span.pause {
     display: block;
@@ -109,12 +109,12 @@ span.pause {
     position: absolute;
     top: 0;
     left: 0;
-    background: url(../images/pause-black.png) no-repeat;
+    background: url(pause-black.png) no-repeat;
     z-index: 4;
     opacity: 0; }
 
 span.pause.active {
-    background: url(../images/pause-black.png) no-repeat 0 -40px }
+    background: url(pause-black.png) no-repeat 0 -40px }
 
 div.timer:hover span.pause,
 span.pause.active {
