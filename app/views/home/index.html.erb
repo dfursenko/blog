@@ -10,28 +10,34 @@
         <div class="post">
           <div class="post-margin">
 
-            <!--<div class="post-avatar">-->
-              <!--<div class="avatar-frame"></div>-->
-              <!--<img alt='' src='< %= article.image %>' class='avatar avatar-70 photo' height='70' width='70'/>-->
-            <!--</div>-->
+            <div class="post-avatar">
+              <div class="avatar-frame"></div>
+              <img alt='' src='<%= gravatar_author %>' class='avatar avatar-70 photo' height='70' width='70'/>
+            </div>
 
             <h4 class="post-title"><a href="<%= article_path(article.id) %>"><%= article.title %></a></h4>
             <ul class="post-status">
               <li><i class="fa fa-clock-o"></i><%= article.created_at.strftime("%e %B %Y") %></li>
-              <!--<li><i class="fa fa-comment-o"></i>No Comments</li>-->
+              <li><i class="fa fa-comment-o"></i>
+                <% if article.comments.size.zero? %>
+                  Комментариев нет
+                <%  else  %>
+                  <%= article.comments.length %> <%= comments_pluralize(article.comments.length)  %>
+                <%  end %>
+              </li>
             </ul>
             <div class="clear"></div>
           </div>
 
-          <!--<div class="featured-image">-->
-          <!--<img src="<%= image_url("Port_Harbor1-610x350.jpg") %>" class="attachment-post-standard "/>-->
-          <!--<div class="post-icon">-->
-          <!--<span class="fa-stack fa-lg">-->
-          <!--<i class="fa fa-circle fa-stack-2x"></i>-->
-          <!--<i class="fa fa-pencil fa-stack-1x fa-inverse"></i>-->
-          <!--</span>-->
-          <!--</div>-->
-          <!--</div>-->
+          <div class="featured-image">
+          <img src="<%= image_url("Port_Harbor1-610x350.jpg") %>" class="attachment-post-standard "/>
+          <div class="post-icon">
+          <span class="fa-stack fa-lg">
+          <i class="fa fa-circle fa-stack-2x"></i>
+          <i class="fa fa-pencil fa-stack-1x fa-inverse"></i>
+          </span>
+          </div>
+          </div>
 
           <div class="post-margin">
             <p><%= article.text %></p>
@@ -51,15 +57,15 @@
 
 
 
-      <!--&lt;!&ndash; Start Pagination &ndash;&gt;-->
-      <!--<div class="spacing-20"></div>-->
-      <!--<ul class="pagination">-->
-        <!--<li class='current'><a href=''>1</a></li>-->
-        <!--<li><a href=''>2</a></li>-->
-        <!--<li><a href=''>3</a></li>-->
-        <!--<li><a href=''>4</a></li>-->
-      <!--</ul>-->
-      <!--&lt;!&ndash; End Pagination &ndash;&gt;-->
+      <!-- Start Pagination -->
+      <div class="spacing-20"></div>
+      <ul class="pagination">
+        <li class='current'><a href=''>1</a></li>
+        <li><a href=''>2</a></li>
+        <li><a href=''>3</a></li>
+        <li><a href=''>4</a></li>
+      </ul>
+      <!-- End Pagination -->
 
       <div class="clear"></div>
     </div>
@@ -69,24 +75,24 @@
   <!-- Start Sidebar -->
   <div class="col-1-3">
     <div class="wrap-col">
-      <!--<div class="widget-container">-->
-        <!--<h6 class="widget-title">Рубрики</h6>-->
-        <!--<ul>-->
-          <!--< % @categories.each do |category| %>-->
-            <!--<li class="cat-item"><a href="#" title="View all posts filed under">< %= category.name %></a></li>-->
-          <!--< % end %>-->
-        <!--</ul>-->
-        <!--<div class="clear"></div>-->
-      <!--</div>-->
+      <div class="widget-container">
+        <h6 class="widget-title">Рубрики</h6>
+        <ul>
+          <% @categories.each do |category| %>
+            <li class="cat-item"><a href="/?category=<%= category.name %>" title="View all posts filed under"><%= category.name %></a></li>
+          <% end %>
+        </ul>
+        <div class="clear"></div>
+      </div>
       <div class="widget-container"><h6 class="widget-title">Последние записи</h6>  <!-- Start Widget -->
         <ul class="widget-recent-posts">
 
-          <% @articles.take(4).each do |article| %>
+          <% @articles_last.each do |article| %>
             <li>
-              <!--<div class="post-image">-->
-                <!--<div class="post-mask"></div>-->
-                <!--<img width="70" height="70" src="img/HighRes-70x70.jpg" class="attachment-post-widget #"/>-->
-              <!--</div>-->
+              <div class="post-image">
+                <div class="post-mask"></div>
+                <img width="70" height="70" src="img/HighRes-70x70.jpg" class="attachment-post-widget #"/>
+              </div>
 
               <h6><a href="<%= article_path(article.id) %>"><%= article.title %></a></h6>
               <span><%= article.created_at.strftime("%e %B %Y") %></span>
@@ -98,15 +104,15 @@
         <!-- End Widget -->
         <div class="clear"></div>
       </div>
-      <!--<div class="widget-container">-->
-        <!--<h6 class="widget-title">Tag Cloud</h6>-->
-        <!--<div class="tagcloud">-->
-          <!--< % @tags.each do |tag| %>-->
-            <!--<a href='#' class='tag-link-12' title='1 topic' style='font-size: 8pt;'>< %= tag.name %></a>-->
-          <!--< % end %>-->
-        <!--</div>-->
-        <!--<div class="clear"></div>-->
-      <!--</div>-->
+      <div class="widget-container">
+        <h6 class="widget-title">Tag Cloud</h6>
+        <div class="tagcloud">
+          <% @tags.each do |tag| %>
+            <a href='#' class='tag-link-12' title='1 topic' style='font-size: 8pt;'><%= tag.name %></a>
+          <% end %>
+        </div>
+        <div class="clear"></div>
+      </div>
       <div class="clear"></div>
     </div>
   </div>        <!-- End Sidebar -->
