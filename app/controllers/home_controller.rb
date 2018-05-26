@@ -7,9 +7,6 @@ class HomeController < ApplicationController
       else
         Article.all.order('created_at DESC')
       end
-    @articles_last = Article.all.limit(4).order('created_at DESC')
-    @categories = Category.all
-    @tags = Tag.all
   end
 
   def about
