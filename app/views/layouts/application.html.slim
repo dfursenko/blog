@@ -15,9 +15,9 @@ html
             a#logo-text href="/" Программист Ruby
             /Navigation Menu
             ul.sf-menu
-              li.menu-item.current-menu-item
+              li.menu-item class="#{'current-menu-item' if current_page?(root_path)}"
                 a href="/" Главная
-              li.menu-item
+              li.menu-item class="#{'current-menu-item' if current_page?(home_about_path)}"
                 a href="#{home_about_path}" Обо мне
             /End Navigation Menu
             .clear
@@ -30,7 +30,7 @@ html
 
       = yield
 
-      = render 'layouts/sidebar'
+      = render 'layouts/sidebar' unless current_page?(home_about_path)
 
     .clear
     /End Main Container
