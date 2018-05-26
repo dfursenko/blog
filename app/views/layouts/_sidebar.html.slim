@@ -36,7 +36,7 @@
         | Tag Cloud
       .tagcloud
         - tags.each do |tag|
-          a.tag-link-12[href="#" title="1 topic" style="font-size: 8pt;"]
+          a.tag-link-12[href="/?tag=#{tag.name}" title="1 topic" style="font-size: 8pt;"]
             = tag.name
       .clear
     .clear
