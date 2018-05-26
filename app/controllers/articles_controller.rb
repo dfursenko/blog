@@ -11,6 +11,11 @@ class ArticlesController < ApplicationController
   # GET /articles/1.json
   def show
     @articles = Article.all.order('created_at DESC')
+
+    # sidebar data
+    @categories = Category.all
+    @articles_last = Article.all.limit(4).order('created_at DESC')
+    @tags = Tag.all
   end
 
   # GET /articles/new

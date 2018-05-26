@@ -1,0 +1,58 @@
+#post-container.col-2-3
+  .wrap-col
+    - @articles.each do |article|
+      .post
+        .post-margin
+          .post-avatar
+            .avatar-frame
+            / img.avatar.avatar-70.photo[alt="" src="<ruby code=\"= gravatar_author\"></ruby>" height="70" width="70"]
+          h4.post-title
+            | <a href="
+            = article_path(article.id)
+            | ">
+            = article.title
+          ul.post-status
+            li
+              i.fa.fa-clock-o
+              = article.created_at.strftime("%e %B %Y")
+            li
+              i.fa.fa-comment-o
+              - if article.comments.size.zero?
+                |  Комментариев нет 
+              - else
+                = article.comments.length
+                = comments_pluralize(article.comments.length)
+          .clear
+        .featured-image
+          |  <img src="
+          = image_url("Port_Harbor1-610x350.jpg")
+          | " class="attachment-post-standard "/> 
+          .post-icon
+            span.fa-stack.fa-lg
+              i.fa.fa-circle.fa-stack-2x
+              i.fa.fa-pencil.fa-stack-1x.fa-inverse
+        .post-margin
+          p
+            = article.text
+        ul.post-social
+          li
+            |  <a href="
+            = article_path(article.id)
+            | " class="readmore">Читать далее 
+            i.fa.fa-arrow-circle-o-right
+        .clear
+    .spacing-20
+    ul.pagination
+      li.current
+        a[href=""]
+          | 1
+      li
+        a[href=""]
+          | 2
+      li
+        a[href=""]
+          | 3
+      li
+        a[href=""]
+          | 4
+    .clear

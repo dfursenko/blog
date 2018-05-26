@@ -25,7 +25,15 @@ html
     .spacing-30
     /End Header
 
-    = yield
+    /Start Main Container
+    .container.zerogrid
+
+      = yield
+
+      = render 'layouts/sidebar'
+
+    .clear
+    /End Main Container
 
     /Start Footer
     .spacing-30

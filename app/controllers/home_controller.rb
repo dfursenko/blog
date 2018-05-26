@@ -7,8 +7,10 @@ class HomeController < ApplicationController
       else
         Article.all.order('created_at DESC')
       end
-    @articles_last = Article.all.limit(4).order('created_at DESC')
+
+    # sidebar data
     @categories = Category.all
+    @articles_last = Article.all.limit(4).order('created_at DESC')
     @tags = Tag.all
   end
 
