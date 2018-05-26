@@ -8,14 +8,11 @@
       ul
         - categories.each do |category|
           li.cat-item
-            | <a href="/?category=
-            = category.name
-            | " title="View all posts filed under">
-            = category.name
+            a href="/?category=#{category.name}" title="View all posts filed under"
+             = category.name
       .clear
     .widget-container
-      h6.widget-title
-        | Последние записи
+      h6.widget-title Последние записи
       ul.widget-recent-posts
         - articles_last.each do |article|
           li
@@ -23,17 +20,15 @@
               .post-mask
               img.attachment-post-widget[width="70" height="70" src="img/HighRes-70x70.jpg"]
             h6
-              | <a href="
-              = article_path(article.id)
-              | ">
-              = article.title
+              a href="#{article_path(article.id)}"
+               = article.title
             span
               = article.created_at.strftime("%e %B %Y")
             .clear
       .clear
     .widget-container
       h6.widget-title
-        | Tag Cloud
+        | Облако тегов
       .tagcloud
         - tags.each do |tag|
           a.tag-link-12[href="/?tag=#{tag.name}" title="1 topic" style="font-size: 8pt;"]
