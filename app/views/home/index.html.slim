@@ -5,12 +5,10 @@
         .post-margin
           .post-avatar
             .avatar-frame
-            / img.avatar.avatar-70.photo[alt="" src="<ruby code=\"= gravatar_author\"></ruby>" height="70" width="70"]
+            img.avatar.avatar-70.photo[alt="" src="#{gravatar_author}" height="70" width="70"]
           h4.post-title
-            | <a href="
-            = article_path(article.id)
-            | ">
-            = article.title
+            a href="#{article_path(article.id)}"
+              = article.title
           ul.post-status
             li
               i.fa.fa-clock-o
@@ -24,9 +22,7 @@
                 = comments_pluralize(article.comments.length)
           .clear
         .featured-image
-          |  <img src="
-          = image_url("Port_Harbor1-610x350.jpg")
-          | " class="attachment-post-standard "/> 
+          img.attachment-post-standard src="#{image_url("Port_Harbor1-610x350.jpg")}"/
           .post-icon
             span.fa-stack.fa-lg
               i.fa.fa-circle.fa-stack-2x
@@ -36,23 +32,18 @@
             = article.text
         ul.post-social
           li
-            |  <a href="
-            = article_path(article.id)
-            | " class="readmore">Читать далее 
-            i.fa.fa-arrow-circle-o-right
+            a.readmore href="#{article_path(article.id)}"
+              | Читать далее
+              i.fa.fa-arrow-circle-o-right
         .clear
     .spacing-20
     ul.pagination
       li.current
-        a[href=""]
-          | 1
+        a href="" 1
       li
-        a[href=""]
-          | 2
+        a href="" 2
       li
-        a[href=""]
-          | 3
+        a href="" 3
       li
-        a[href=""]
-          | 4
+        a href="" 4
     .clear

@@ -1,4 +1,16 @@
 module ApplicationHelper
+  def categories
+    Category.all
+  end
+
+  def articles_last
+    Article.all.limit(4).order('created_at DESC')
+  end
+
+  def tags
+    Tag.all
+  end
+
   def comments_pluralize(count)
     def my_plural(count, one, two, three)
       i = count.to_s.split('').last.to_i

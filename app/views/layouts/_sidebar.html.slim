@@ -6,7 +6,7 @@
       h6.widget-title
         | Рубрики
       ul
-        - @categories.each do |category|
+        - categories.each do |category|
           li.cat-item
             | <a href="/?category=
             = category.name
@@ -17,11 +17,11 @@
       h6.widget-title
         | Последние записи
       ul.widget-recent-posts
-        - @articles_last.each do |article|
+        - articles_last.each do |article|
           li
-            / .post-image
-            /   .post-mask
-            /   img.attachment-post-widget.#[width="70" height="70" src="img/HighRes-70x70.jpg"]
+            .post-image
+              .post-mask
+              img.attachment-post-widget[width="70" height="70" src="img/HighRes-70x70.jpg"]
             h6
               | <a href="
               = article_path(article.id)
@@ -35,7 +35,7 @@
       h6.widget-title
         | Tag Cloud
       .tagcloud
-        - @tags.each do |tag|
+        - tags.each do |tag|
           a.tag-link-12[href="#" title="1 topic" style="font-size: 8pt;"]
             = tag.name
       .clear
