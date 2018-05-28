@@ -16,9 +16,9 @@
       ul.widget-recent-posts
         - articles_last.each do |article|
           li
-            .post-image
-              .post-mask
-              img.attachment-post-widget[width="70" height="70" src="img/HighRes-70x70.jpg"]
+            / .post-image
+            /   .post-mask
+            /   img.attachment-post-widget[width="70" height="70" src="img/HighRes-70x70.jpg"]
             h6
               a href="#{article_path(article.id)}"
                = article.title
