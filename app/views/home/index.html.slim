@@ -3,9 +3,9 @@
     - @articles.each do |article|
       .post
         .post-margin
-          .post-avatar
-            .avatar-frame
-            img.avatar.avatar-70.photo[alt="" src="#{gravatar_author}" height="70" width="70"]
+          / .post-avatar
+          /   .avatar-frame
+          /   img.avatar.avatar-70.photo[alt="" src="#{gravatar_author}" height="70" width="70"]
           h4.post-title
             a href="#{article_path(article.id)}"
               = article.title
@@ -22,14 +22,14 @@
                 = comments_pluralize(article.comments.length)
           .clear
         .featured-image
-          img.attachment-post-standard src="#{article.image.url}"/
+          img.attachment-post-standard src="#{article.image}"/
           / .post-icon
           /   span.fa-stack.fa-lg
           /     i.fa.fa-circle.fa-stack-2x
           /     i.fa.fa-pencil.fa-stack-1x.fa-inverse
         .post-margin
           p
-            = article.text
+            = article.text[0..500] + '...'
         ul.post-social
           li
             a.readmore href="#{article_path(article.id)}"
