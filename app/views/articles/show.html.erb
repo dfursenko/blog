@@ -19,15 +19,15 @@
         <div class="clear"></div>
       </div>
 
-      <!--<div class="featured-image">-->
-      <!--<img src="< %= image_url("Port_Harbor1-610x350.jpg") %>" class="attachment-post-standard "/>-->
-      <!--<div class="post-icon">-->
-      <!--<span class="fa-stack fa-lg">-->
-      <!--<i class="fa fa-circle fa-stack-2x"></i>-->
-      <!--<i class="fa fa-pencil fa-stack-1x fa-inverse"></i>-->
-      <!--</span>-->
-      <!--</div>-->
-      <!--</div>-->
+      <div class="featured-image">
+      <img src="<%= @article.image.url %>" class="attachment-post-standard "/>
+      <div class="post-icon">
+      <span class="fa-stack fa-lg">
+      <i class="fa fa-circle fa-stack-2x"></i>
+      <i class="fa fa-pencil fa-stack-1x fa-inverse"></i>
+      </span>
+      </div>
+      </div>
 
       <div class="post-margin">
         <p><%= @article.text %></p>

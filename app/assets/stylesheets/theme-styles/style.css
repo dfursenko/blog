@@ -51,7 +51,15 @@ a:hover{ color:#2980b9; }
 	background:#343434;
 	}
 #logo{ margin-left:15px; }
-
+#logo-text {
+    margin: 10px;
+    font-family: 'Montserrat', sans-serif;
+    text-transform:uppercase;
+    font-size: 2.3em;
+    font-weight:700;
+    line-height:1.4em;
+    color: white;
+}
 
 /* Posts */
 .post{
@@ -81,15 +89,29 @@ a:hover{ color:#2980b9; }
 .post .post-social a:hover{ background:#2980b9; }
 
 /* Post Icon and Video */
-.post .featured-image{ width:100%; height:350px; }
-.post .featured-image img{ width:100%; height:350px; }
-.post .featured-image iframe{ width:100%; height:343px; }
+.post .featured-image{
+    width:100%;
+    /*height:350px; */
+    text-align: center }
+.post .featured-image img{
+    width:533px;
+    /*height:350px;*/
+}
+.post .featured-image iframe{
+    width:100%;
+    height:343px;
+}
 
 .post .post-icon{ width:80px; height:80px; position:relative; bottom:40px; margin:0 auto; z-index:9999999 }
 .post-icon .fa-stack{ height:80px; width:80px; font-size:40px; }
 .post-icon .fa-picture-o{ font-size:30px; }
 .post-icon .fa-circle{ color:#FFFFFF; }
 .post-icon .fa-inverse{ color:#2980b9; }
+
+.attachment-post-widget {
+    width: 70px;
+    height: 70px;
+}
 
 /* Pagination */
 .pagination li{ float:left; margin-right:3px; text-transform:uppercase }
@@ -241,7 +263,16 @@ a:hover{ color:#2980b9; }
 #footer-container{ background:#343434; padding-top:20px; }
 #footer-container p{ color:#FFFFFF; font-size:14px; float:left; margin-left:15px; }
 #footer-logo{ float:right; margin-right:15px; }
-
+#footer-logo-text{
+    float:right;
+    margin-right:15px;
+    font-family: 'Montserrat', sans-serif;
+    text-transform:uppercase;
+    font-size: 1.5em;
+    font-weight:700;
+//line-height:1.4em;
+    color: white;
+}
 
 
 
