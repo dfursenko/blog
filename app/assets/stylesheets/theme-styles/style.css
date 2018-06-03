@@ -248,6 +248,11 @@ a:hover{ color:#2980b9; }
 .comment-list .children{ margin-left:80px; margin-top:40px; }
 .comment-list li{ margin-bottom:30px; }
 
+.comment-author {
+    margin: 10px 0;
+    font-weight: 600;
+}
+
 /* Comment Form */
 .commen-form{ margin-left:40px; margin-right:40px; } 
 .comment-email, .comment-name, .comment-url{ overflow:hidden; width:50%; padding:10px; margin-bottom:30px; outline:none; background:#EEEEEE; border:none; }
