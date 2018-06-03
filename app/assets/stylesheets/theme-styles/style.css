@@ -436,3 +436,37 @@ a:hover{ color:#2980b9; }
 .widget-prev { float: left; }
 .widget-next { float: right; }
 
+.user-data {
+    margin: 20px 0;
+    padding: 20px 0 0 0;
+    border-top: 1px solid #eee;
+}
+.user-data table {
+    margin: 10px;
+}
+.user-data table td {
+    height: 20px;
+}
+.user-data table td:first-child {
+    width: 120px;
+}
+.user-data table td:last-child {
+    /*text-align: right;*/
+}
+.user-buttons a{
+    display: inline-block;
+    margin-right: 10px;
+    color: #2980b9;
+}
+a.delete-link {
+    color: #ccc;
+}
+a.delete-link:hover {
+    color: #ff3633;
+}
+.yes {
+    color: green;
+}
+.no {
+    color: red;
+}

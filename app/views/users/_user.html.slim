@@ -1,0 +1,6 @@
+li
+  = render partial: 'users/user-block', locals: {user: user}
+  div.user-buttons
+    = link_to 'Показать', user
+    = link_to 'Редактировать', edit_user_path(user)
+    = link_to 'Удалить', user, class: 'delete-link', data: { confirm: 'Вы уверены?' }, method: :delete

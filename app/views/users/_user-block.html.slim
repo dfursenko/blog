@@ -1,0 +1,24 @@
+.user-data
+  h6.user-name = user.name
+  table
+    tr
+      td E-mail:
+      td = user.email
+    tr
+      td Модератор:
+      - if user.moderator
+        td.yes Да
+      - else
+        td.no Нет
+    tr
+      td Автор:
+      - if user.creator
+        td.yes Да
+      - else
+        td.no Нет
+    tr
+      td Активность:
+      - unless user.banned
+        td.yes Да
+      - else
+        td.no Нет

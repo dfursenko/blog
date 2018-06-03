@@ -1,29 +1,14 @@
-h1 Listing users
+#post-container.col-2-3
+  .wrap-col
+    .post
+      .post-margin
+        h3 Список пользователей
+        br
+        = link_to 'Создать пользователя', new_user_path
+        br
+        ul
+          = render partial: 'user', collection: @users
 
-table
-  thead
-    tr
-      th Name
-      th Email
-      th Moderator
-      th Creator
-      th Banned
-      th
-      th
-      th
+        br
 
-  tbody
-    - @users.each do |user|
-      tr
-        td = user.name
-        td = user.email
-        td = user.moderator
-        td = user.creator
-        td = user.banned
-        td = link_to 'Show', user
-        td = link_to 'Edit', edit_user_path(user)
-        td = link_to 'Destroy', user, data: { confirm: 'Are you sure?' }, method: :delete
-
-br
-
-= link_to 'New User', new_user_path
+        = link_to 'Создать пользователя', new_user_path

@@ -1,21 +1,13 @@
-p#notice = notice
+#post-container.col-2-3
+  .wrap-col
+    .post
+      .post-margin
+        h3 Пользователь
+        br
+        p#notice = notice
 
-p
-  strong Name:
-  = @user.name
-p
-  strong Email:
-  = @user.email
-p
-  strong Moderator:
-  = @user.moderator
-p
-  strong Creator:
-  = @user.creator
-p
-  strong Banned:
-  = @user.banned
+        = render partial: 'users/user-block', locals: {user: @user}
 
-=> link_to 'Edit', edit_user_path(@user)
-'|
-=< link_to 'Back', users_path
+        => link_to 'Edit', edit_user_path(@user)
+        '|
+        =< link_to 'Back', users_path
