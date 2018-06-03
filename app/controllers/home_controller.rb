@@ -6,7 +6,8 @@ class HomeController < ApplicationController
       elsif params[:tag]
         Tag.find_by(name: params[:tag]).articles.order('created_at DESC')
       else
-        Article.all.order('created_at DESC')
+        # Article.all.order('created_at DESC')
+        Article.includes(:user).page(params[:page]).per(3)
       end
   end
 

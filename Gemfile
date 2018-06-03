@@ -37,6 +37,7 @@ gem 'jbuilder', '~> 2.5'
 # gem 'capistrano-rails', group: :development
 gem 'carrierwave', '~> 1.2', '>= 1.2.2'
 gem 'nokogiri', '~> 1.8', '>= 1.8.2'
+gem 'kaminari'
 
 group :development, :test do
   gem 'ffaker'

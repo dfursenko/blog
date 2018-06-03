@@ -114,11 +114,26 @@ a:hover{ color:#2980b9; }
 }
 
 /* Pagination */
-.pagination li{ float:left; margin-right:3px; text-transform:uppercase }
-.pagination li a{ background:#343434; color:#FFF; font-size:14px; padding:10px; padding-left:15px; padding-right:15px; font-weight:bold }
-.pagination li a:hover{ background:#2980b9; color:#FFFFFF }
-.pagination li.current a{ background:#2980b9; color:#FFFFFF }
+.pagination li, .pagination span.page{ float:left; margin-right:3px; text-transform:uppercase }
+.pagination li a, .pagination span.page a, .pagination span.page.current{
+    background:#343434;
+    color:#FFF;
+    font-size:14px;
+    padding:10px;
+    padding-left:15px;
+    padding-right:15px;
+    font-weight:bold }
+.pagination li a:hover, .pagination span.page a:hover{ background:#2980b9; color:#FFFFFF }
+.pagination li.current a, .pagination span.page.current{
+    background:#2980b9;
+    color:#FFFFFF;
+    font-size:14px;
+    font-weight:bold
+}
 
+.pagination .first, .pagination .prev, .pagination .next, .pagination .last {
+    display: none;
+}
 
 
 /* Related Posts in single page */
@@ -475,3 +490,5 @@ a.delete-link:hover {
 .no {
     color: red;
 }
+
+
