@@ -19,10 +19,10 @@
                 |  Комментариев нет 
               - else
                 => article.comments.length
-                = comments_pluralize(article.comments.length)
+                a href="#{article_path(article.id)}#comment-header" = comments_pluralize(article.comments.length)
           .clear
-        .featured-image
-          img.attachment-post-standard src="#{article.image}"/
+        / .featured-image
+        /   img.attachment-post-standard src="#{article.image}"/
           / .post-icon
           /   span.fa-stack.fa-lg
           /     i.fa.fa-circle.fa-stack-2x
