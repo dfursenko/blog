@@ -1,10 +1,11 @@
 Rails.application.routes.draw do
-  root 'home#index'
-  get  'home/index'
-  get  'home/about'
+  resources :users
   resources :categories
   resources :articles do
     resources :comments
   end
   resources :tags
+  # get  'home/index', to: '/'
+  get  'home/about'
+  root 'home#index'
 end
