@@ -1,0 +1,54 @@
+#post-container.col-2-3
+  .wrap-col
+    .post
+      .post-margin
+        h4.post-title
+          = @article.title
+        ul.post-status
+          li
+            i.fa.fa-clock-o
+            = @article.created_at.strftime("%e %B %Y")
+        .clear
+      / .featured-image
+      /   |  <img src="
+      /   = @article.image
+      /   | " class="attachment-post-standard "/>
+      /   .post-icon
+      /     span.fa-stack.fa-lg
+      /       i.fa.fa-circle.fa-stack-2x
+      /       i.fa.fa-pencil.fa-stack-1x.fa-inverse
+      .post-margin
+        p
+          = @article.text
+        .post-tags
+          span.fa-stack.fa-lg
+            i.fa.fa-circle.fa-stack-2x
+            i.fa.fa-tags.fa-stack-1x.fa-inverse
+          - @article.tags.each do |tag|
+            |  <a href="/?tag=
+            = tag.name
+            | " rel="tag">
+            = tag.name
+            = "," unless tag == @article.tags.last
+        .clear
+      .clear
+    .comment-container
+      h6#comment-header
+        | Комментарии
+      ul.comment-list
+        - @article.comments.each do |comment|
+          li
+            .comment-author
+              = comment.commenter
+            .comment-message
+              = comment.message
+      .commen-form
+        h6
+          | Ваш комментарий:
+        #respond.comment-respond
+          = form_with(model: [ @article, @article.comments.build ], local: true) do |form|
+            = form.text_field :commenter, placeholder: "Ваше имя", class: "comment-name"
+            = form.text_area :message, placeholder: "Ваше сообщение", class: "comment-text-area"
+            = form.submit id: "comment-submit", value: "Отправить"
+        .clear
+    .clear
