@@ -9,14 +9,14 @@
             i.fa.fa-clock-o
             = @article.created_at.strftime("%e %B %Y")
         .clear
-      / .featured-image
-      /   |  <img src="
-      /   = @article.image
-      /   | " class="attachment-post-standard "/>
-      /   .post-icon
-      /     span.fa-stack.fa-lg
-      /       i.fa.fa-circle.fa-stack-2x
-      /       i.fa.fa-pencil.fa-stack-1x.fa-inverse
+      .featured-image
+        |  <img src="
+        = @article.image
+        | " class="attachment-post-standard "/>
+        .post-icon
+          span.fa-stack.fa-lg
+            i.fa.fa-circle.fa-stack-2x
+            i.fa.fa-pencil.fa-stack-1x.fa-inverse
       .post-margin
         p
           = @article.text
@@ -36,6 +36,7 @@
       h6#comment-header
         | Комментарии
       ul.comment-list
+
         - @comments.each do |comment|
           li
             .comment-author
@@ -44,7 +45,8 @@
               = comment.message
 
       .comment_navigation
-        = paginate @comments, param_name: :comments_part, params: {anchor: 'comment-header'}, views_prefix: 'templates'
+        - if @comments
+          = paginate @comments, param_name: :comments_part, params: {anchor: 'comment-header'}, views_prefix: 'templates'
       .spacing-60
 
       .commen-form

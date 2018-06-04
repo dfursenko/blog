@@ -21,12 +21,12 @@
                 => article.comments.length
                 a href="#{article_path(article.id)}#comment-header" = comments_pluralize(article.comments.length)
           .clear
-        / .featured-image
-        /   img.attachment-post-standard src="#{article.image}"/
-          / .post-icon
-          /   span.fa-stack.fa-lg
-          /     i.fa.fa-circle.fa-stack-2x
-          /     i.fa.fa-pencil.fa-stack-1x.fa-inverse
+        .featured-image
+          img.attachment-post-standard src="#{article.image}"/
+          .post-icon
+            span.fa-stack.fa-lg
+              i.fa.fa-circle.fa-stack-2x
+              i.fa.fa-pencil.fa-stack-1x.fa-inverse
         .post-margin
           p
             = article.text[0..500] + '...'
@@ -47,5 +47,6 @@
     /   li
     /     a href="" 4
     p
-      = paginate @articles, views_prefix: 'templates'
+      - if @articles
+        = paginate @articles, views_prefix: 'templates'
     .clear
