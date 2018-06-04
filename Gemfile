@@ -38,9 +38,9 @@ gem 'jbuilder', '~> 2.5'
 gem 'carrierwave', '~> 1.2', '>= 1.2.2'
 gem 'nokogiri', '~> 1.8', '>= 1.8.2'
 gem 'kaminari'
-gem 'ffaker'
 
 group :development, :test do
+  gem 'ffaker'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   # Adds support for Capybara system testing and selenium driver
