@@ -1,0 +1,16 @@
+== paginator.render do
+  nav.pagination
+    .content-left.col-2-8
+      == first_page_tag
+      == prev_page_tag
+
+    .content-center.col-4-8
+      - each_page do |page|
+        - if page.display_tag?
+          == page_tag page
+        - elsif !page.was_truncated?
+          == gap_tag
+
+    .content-right.col-2-8
+      == next_page_tag
+      == last_page_tag

@@ -36,12 +36,17 @@
       h6#comment-header
         | Комментарии
       ul.comment-list
-        - @article.comments.each do |comment|
+        - @comments.each do |comment|
           li
             .comment-author
               = comment.commenter
             .comment-message
               = comment.message
+
+      .comment_navigation
+        = paginate @comments, param_name: :comments_part, params: {anchor: 'comment-header'}, views_prefix: 'templates'
+      .spacing-60
+
       .commen-form
         h6
           | Ваш комментарий:

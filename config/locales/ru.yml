@@ -34,3 +34,6 @@ ru:
     pagination:
       previous: 'Предыдущая'
       first: 'Первая'
+      next: 'Следующая'
+      last: 'Последняя'
+      truncate: '...'

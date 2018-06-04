@@ -114,25 +114,66 @@ a:hover{ color:#2980b9; }
 }
 
 /* Pagination */
-.pagination li, .pagination span.page{ float:left; margin-right:3px; text-transform:uppercase }
-.pagination li a, .pagination span.page a, .pagination span.page.current{
-    background:#343434;
+/*.pagination span.page{ margin-right:3px; text-transform:uppercase }*/
+/*.pagination span.page a{*/
+    /*background:#343434;*/
+    /*color:#FFF;*/
+    /*font-size:14px;*/
+    /*padding:10px 15px;*/
+    /*font-weight:bold }*/
+/*.pagination span.page a:hover{ background:#2980b9; color:#FFFFFF }*/
+/*.pagination li.current a, .pagination span.page.current{*/
+    /*background:#2980b9;*/
+    /*color:#FFFFFF;*/
+/*}*/
+
+/*.pagination .first, .pagination .prev, .pagination .next, .pagination .last, .pagination .gap{*/
+    /*!*display: none;*!*/
+/*}*/
+
+.comment_navigation {
+    margin: 0 40px;
+}
+/*.comment_navigation .button{*/
+    /*background:#2980b9;*/
+    /*color:#FFF;*/
+    /*font-size:12px;*/
+    /*!*padding:5px;*!*/
+    /*font-weight:bold*/
+/*}*/
+/*.comment_navigation span.button {*/
+    /*background: #eee;*/
+/*}*/
+/*.comment_navigation .prev {*/
+    /*!*float: left;*!*/
+/*}*/
+/*.comment_navigation .next {*/
+    /*!*float: right;*!*/
+/*}*/
+nav.pagination {
+    display: flex;
+    justify-content: space-between;
+}
+nav.pagination span a,
+nav.pagination span.a {
+    background:#2980b9;
     color:#FFF;
     font-size:14px;
-    padding:10px;
-    padding-left:15px;
-    padding-right:15px;
-    font-weight:bold }
-.pagination li a:hover, .pagination span.page a:hover{ background:#2980b9; color:#FFFFFF }
-.pagination li.current a, .pagination span.page.current{
-    background:#2980b9;
-    color:#FFFFFF;
-    font-size:14px;
+    padding:10px 15px;
     font-weight:bold
 }
+nav.pagination span.a {
+    background:#eee;
+}
+nav.pagination span:hover a,
+nav.pagination span.current {
+    background: #f13110;
+}
 
-.pagination .first, .pagination .prev, .pagination .next, .pagination .last {
-    display: none;
+.comment_navigation nav.pagination span a,
+.comment_navigation nav.pagination span.a{
+    font-size:12px;
+    padding:5px 10px;
 }
 
 
@@ -374,9 +415,6 @@ a:hover{ color:#2980b9; }
 .carousel-controls a:hover{ background:#2980b9; }
 
 .list_carousel:hover .carousel-controls a{ opacity:1; filter:Alpha(opacity=100); }
-
-.prev { float: left; }
-.next { float: right; }
 
 
 
