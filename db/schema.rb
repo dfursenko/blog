@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180531133456) do
+ActiveRecord::Schema.define(version: 20180607082024) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -49,39 +49,32 @@ ActiveRecord::Schema.define(version: 20180531133456) do
     t.index ["article_id"], name: "index_comments_on_article_id"
   end
 
-  create_table "seos", force: :cascade do |t|
-    t.string "description"
-    t.string "keywords"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string "seoble_type"
-    t.bigint "seoble_id"
-    t.index ["seoble_type", "seoble_id"], name: "index_seos_on_seoble_type_and_seoble_id"
-  end
-
   create_table "tags", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "technologies", force: :cascade do |t|
-    t.string "name"
-    t.integer "rank"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "users", force: :cascade do |t|
     t.string "name"
-    t.string "email"
+    t.string "password"
     t.boolean "moderator"
     t.boolean "creator"
     t.boolean "banned"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["email"], name: "index_users_on_email", unique: true
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer "sign_in_count", default: 0, null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.inet "current_sign_in_ip"
+    t.inet "last_sign_in_ip"
     t.index ["name"], name: "index_users_on_name", unique: true
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
   add_foreign_key "articles", "categories"

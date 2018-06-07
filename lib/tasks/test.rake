@@ -49,7 +49,7 @@ namespace :blog do
       # Users
       users = article_page.css('.user-info__nickname_small').children.map(&:to_s)
       users.each do |user|
-        User.create!(name: user, email: "#{user}@email.ru") unless User.exists?(name: user)
+        User.create!(name: user, password: '123456', email: "#{user}@email.ru") unless User.exists?(name: user)
       end
 
       # Article
@@ -69,7 +69,7 @@ namespace :blog do
           user_id: User.find_by(name: users.first).id
       }
       article = Article.create!(hash_article)
-      # p article
+      p article.title
 
       # Comments
       comments = article_page.css('.comment')#.children.map(&:to_s)
