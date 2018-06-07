@@ -530,3 +530,54 @@ a.delete-link:hover {
 }
 
 
+.user_form {
+  margin: 50px auto;
+  width: 420px;
+  height: 400px;
+  //background: rgba(198, 227, 247, 0.5);
+
+  padding: 20px;
+  text-align: center;
+
+  .field {
+    margin-top: 10px;
+
+    label {
+    }
+
+    input[type='text'],
+    input[type='email'],
+    input[type='password'] {
+      margin-top: 4px;
+      width: 300px;
+      padding: 5px 10px;
+
+      border: 1px solid #2980b9;
+      //border-radius: 5px;
+    }
+  }
+
+  .actions {
+    margin: 20px 0 10px;
+
+    input[type='submit'] {
+      width: 320px;
+      padding: 5px 0;
+      //border-radius: 5px;
+      border: 1px solid #2980b9;
+      background: #2980b9;
+      font-size: 16px;
+    }
+  }
+}
+.user_sign {
+  position: absolute;
+  top: -25px;
+  right: 20px;
+  z-index: 100;
+
+  span {
+    text-transform: capitalize;
+  }
+}
+
