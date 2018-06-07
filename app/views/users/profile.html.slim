@@ -1,0 +1,19 @@
+#post-container.col-2-3
+  .wrap-col
+    .post
+      .post-margin
+        h3 Ваш профиль
+        br
+        p#notice = notice
+
+        .user-data
+          table
+            tr
+              td Логин:
+              td = @user.name
+            tr
+            tr
+              td E-майл:
+              td = @user.email
+              tr
+        => link_to "Редактировать профиль", user_profile_edit_path(@user)
